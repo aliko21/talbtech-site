@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.crownstor.carwash2",
+      "sha256_cert_fingerprints": [
+        "36:e2:15:90:56:e9:50:b1:1f:39:6c:8b:51:f7:b8:30:e2:63:a9:b6:02:46:c9:50:cb:d3:1b:ed:88:4f:f6:81",
+        "b4:b8:85:a9:ab:e2:f2:3e:0a:1a:8b:9a:9c:83:43:a2:f5:da:9a:ae:79:ff:a3:01:1d:f6:fc:ca:3d:4f:3e"
+      ]
+    }
+  }
+]

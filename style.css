@@ -1,0 +1,67 @@
+*{box-sizing:border-box}
+:root{--primary:#1e3c72;--primary2:#2a5298;--bg:#f9f9f9;--text:#333;--white:#fff;--shadow:0 10px 30px rgba(0,0,0,.08)}
+html,body{margin:0;padding:0;font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;background:var(--white);box-shadow:var(--shadow);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--primary);font-size:1.2rem}
+.logo{width:36px;height:36px;border-radius:8px}
+.links a{margin:0 10px;text-decoration:none;color:var(--text);font-weight:600}
+.links a:hover{color:var(--primary)}
+.lang select{padding:6px 10px;border:1px solid #ddd;border-radius:8px}
+.hero{position:relative;background:linear-gradient(120deg,var(--primary),var(--primary2));color:var(--white);padding:90px 0}
+.hero-inner{display:flex;align-items:center;justify-content:center;text-align:center;min-height:320px}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.15),transparent 40%),radial-gradient(ellipse at 80% 90%,rgba(255,255,255,.1),transparent 40%);pointer-events:none}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--white);color:var(--primary);font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s}
+.btn:hover{background:transparent;color:var(--white);border-color:var(--white)}
+.btn.ghost{background:transparent;color:var(--primary);border-color:var(--primary)}
+.section{padding:70px 0}
+.section.alt{background:#eef4ff}
+.section-sub{opacity:.8;margin-top:-10px;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--white);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card h3{color:var(--primary)}
+.stores img{height:42px;margin-right:8px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.1))}
+.contact-form{max-width:720px;margin:0 auto}
+.contact-form .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;font-size:1rem}
+.contact-form button{margin-top:12px}
+.contact-mail{margin-top:10px;opacity:.8}
+.footer{background:var(--primary);color:var(--white);padding:25px 0;text-align:center;margin-top:40px}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.links{display:none}.cards{grid-template-columns:1fr}.hero{padding:70px 0}}
+[data-animate]{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+[data-animate].in{opacity:1;transform:none}
+/* ======== Download Buttons Styling ======== */
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin: 6px;
+    font-size: 15px;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #34a853, #4285f4);
+    transform: translateY(-2px);
+}
+
+.download-btn.ios {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.download-btn.ios:hover {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+}
+
+.download-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+}

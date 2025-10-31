@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>غسلني – Ghaslani | التحميل الآن</title>
+  <!-- ✅ أضف هذه الوسوم هنا بالضبط 👇 -->
+  <meta property="og:title" content="غسلني – Ghaslani | التحميل الآن">
+  <meta property="og:description" content="غسيل سيارتك في أي وقت وأي مكان 🚗💦">
+  <meta property="og:image" content="app_icon.png">
+  <meta property="og:url" content="https://talbtech.com/ghaslani_download">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="app_icon.png">
+  <!-- Firebase SDK v9 (modular) -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getDatabase, ref, onValue, push, child, runTransaction } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+    
+    // تهيئة Firebase
+    const firebaseConfig = {
+      databaseURL: "https://carwash2-3d299-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    window.db = database;
+    window.dbRef = ref;
+    window.dbOnValue = onValue;
+    window.dbPush = push;
+    window.dbRunTransaction = runTransaction;
+    window.dbChild = child;
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+    :root {
+      --primary: #0078ff;
+      --primary-dark: #0066d6;
+      --secondary: #00c853;
+      --secondary-dark: #00a844;
+      --accent: #ff4081;
+      --text: #111;
+      --text-light: #555;
+      --bg: #fafafa;
+      --card: #fff;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      min-height: 100vh;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    body.english {
+      direction: ltr;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: clamp(15px, 5vw, 30px) auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+      width: 95%;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 10px auto;
+        width: 98%;
+        border-radius: 12px;
+      }
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    .language-switcher {
+      position: absolute;
+      top: 10px;
+      left: 18px;
+      z-index: 101;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    body.english .language-switcher {
+      left: auto;
+      right: 18px;
+    }
+
+    body.english .language-switcher {
+      right: auto;
+      left: 15px;
+    }
+
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: clamp(15px, 4vw, 20px);
+      padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
+      font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: clamp(3px, 1vw, 5px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+
+    .lang-btn:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .lang-btn i {
+      font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+    }
+
+    @media (max-width: 480px) {
+      .language-switcher {
+        top: 10px;
+        right: 10px;
+      }
+      
+      body.english .language-switcher {
+        right: auto;
+        left: 10px;
+      }
+      
+      .lang-btn {
+        padding: 6px 10px;
+        font-size: 0.65rem;
+        gap: 3px;
+      }
+      
+      .lang-btn i {
+        font-size: 0.65rem;
+      }
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 25px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      flex-direction: row;
+      transition: all 0.4s ease;
+    }
+    body.english .header {
+      flex-direction: row-reverse;
+    }
+
+    body.english .header {
+      flex-direction: row;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .header img {
+      width: clamp(70px, 18vw, 90px);
+      height: clamp(70px, 18vw, 90px);
+      border-radius: clamp(15px, 4vw, 20px);
+      margin-right: clamp(15px, 4vw, 20px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      z-index: 1;
+      flex-shrink: 0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    body.english .header img {
+      margin-right: 0;
+      margin-left: clamp(15px, 4vw, 20px);
+    }
+
+    .header-content {
+      z-index: 1;
+    }
+
+    body.english .header-content {
+      text-align: left;
+    }
+
+    .header h2 {
+      margin: 0 0 5px 0;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .header p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: clamp(0.8rem, 3vw, 0.9rem);
+      line-height: 1.4;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      padding: clamp(10px, 3vw, 15px) clamp(15px, 4vw, 20px);
+      color: var(--text-light);
+      background: rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+      gap: clamp(5px, 2vw, 10px);
+      font-weight: 450;
+    }
+
+    .stats div {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .stats i {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .stats i.star-icon {
+      color: #ffc107; /* نجمة التقييم */
+    }
+
+    .stats i.star-icon {
+      margin-left: clamp(3px, 1vw, 5px);
+      color: #ffc107;
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+    }
+
+    @media (max-width: 480px) {
+      .stats {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      
+      .stats div {
+        justify-content: center;
+      }
+    }
+
+    .screenshots-container {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .screenshots {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 20px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .screenshots::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshots img {
+      height: 400px;
+      width: auto;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex: 0 0 auto;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      background: #f8f9fa;
+    }
+
+    .screenshots img:hover {
+      transform: scale(1.05);
+    }
+
+    .screenshot-nav {
+      display: none !important;
+    }
+
+    .screenshot-dots {
+      display: flex;
+      justify-content: center;
+      gap: clamp(6px, 1.5vw, 8px);
+      margin-top: clamp(8px, 2vw, 10px);
+      padding: 0 10px;
+    }
+
+    .dot {
+      width: clamp(8px, 2vw, 10px);
+      height: clamp(8px, 2vw, 10px);
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .features {
+      padding: 0 20px 15px;
+    }
+
+    .features h3 {
+      margin-bottom: clamp(8px, 2vw, 10px);
+      color: var(--primary);
+      font-size: clamp(1rem, 3vw, 1.1rem);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(8px, 2vw, 10px);
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: clamp(0.75rem, 2.3vw, 0.85rem);
+      color: var(--text-light);
+      line-height: 1.4;
+      gap: 6px;
+    }
+
+    .feature i {
+      margin-left: 6px;
+      color: var(--secondary);
+      font-size: clamp(0.75rem, 2.3vw, 0.85rem);
+      flex-shrink: 0;
+    }
+    body[dir="rtl"] .feature i {
+      margin-left: 6px;
+      margin-right: 0;
+    }
+
+    body[dir="ltr"] .feature i {
+      margin-right: 6px;
+      margin-left: 0;
+    }
+
+
+    @media (max-width: 480px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+    .download-btn {
+      display: block;
+      margin: clamp(15px, 4vw, 20px) auto;
+      width: 85%;
+      max-width: 350px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+      color: #fff;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      padding: clamp(12px, 3vw, 16px) clamp(10px, 2vw, 15px);
+      box-shadow: 0 6px 15px rgba(0, 200, 83, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      line-height: 1.2;
+      letter-spacing: 0.3px;
+      animation: pulseButton 2.2s infinite ease-in-out; /* 🔥 نبض خفيف لجذب الانتباه */
+    }
+
+    .download-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-20deg);
+      animation: shine 2.5s infinite;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00e676, #00c853);
+      box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+    }
+
+    .download-btn:hover::before {
+      left: 100%;
+    }
+
+    .download-btn:active {
+       transform: scale(0.98);
+    }
+
+    /* ✨ حركة وميض تمر فوق الزر */
+    @keyframes shine {
+      0% { left: -150%; }
+      50% { left: 120%; }
+      100% { left: 120%; }
+    }
+
+    /* 💓 تأثير نبض خفيف */
+    @keyframes pulseButton {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 200, 83, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(0, 200, 83, 0.55); }
+    }
+
+    .progress {
+      display: none;
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    .circle {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 6px solid #e6e6e6;
+      border-top-color: var(--secondary);
+      margin: 0 auto 15px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .progress-bar {
+      width: 55%;
+      height: 6px;
+      background: #e6e6e6;
+      border-radius: 5px;
+      margin: 15px auto;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 55%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      border-radius: 5px;
+      transition: width 0.5s ease;
+    }
+
+    .share {
+      display: none;
+      text-align: center;
+      padding: 25px 20px;
+      background: rgba(0, 120, 255, 0.05);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .share h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+      border-radius: clamp(6px, 1.5vw, 8px);
+      margin: clamp(3px, 1vw, 5px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      font-family: 'Tajawal', sans-serif;
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+      white-space: nowrap;
+    }
+
+    .share-btn i {
+      margin-left: clamp(3px, 1vw, 5px);
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .share-btn.whatsapp {
+      background: #25D366;
+    }
+
+    .share-btn.twitter {
+      background: #1DA1F2;
+    }
+
+    .share-btn.telegram {
+      background: #0088cc;
+    }
+
+    .share-btn.copy {
+      background: #6c757d;
+    }
+
+    #done {
+      margin-top: 15px;
+      color: var(--secondary);
+      font-weight: 500;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 13px;
+      color: var(--text-light);
+      background: rgba(0, 0, 0, 0.02);
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px; /* مسافة بسيطة بين النص والشعار */
+      flex-direction: row-reverse; /* لأن الصفحة RTL */
+    }
+
+    body.english .footer-content {
+      flex-direction: row; /* عند التحويل للإنجليزية يصبح الشعار يسار النص */
+    }
+
+    .footer-content img {
+      width: 22px; /* حجم صغير وأنيق */
+      height: auto;
+      opacity: 0.8; /* لمسة جمالية */
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-content img:hover {
+      opacity: 1;
+    }
+
+    .header img {
+      width: clamp(70px, 18vw, 90px);
+      height: clamp(70px, 18vw, 90px);
+      border-radius: clamp(15px, 4vw, 20px);
+      margin-left: clamp(15px, 4vw, 20px);
+      margin-top: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      z-index: 1;
+      flex-shrink: 0;
+      transition: all 0.4s ease-in-out;
+    }
+    body.english .header img {
+      margin-left: 0;
+      margin-right: clamp(15px, 4vw, 20px);
+    }
+
+    .rating-stars {
+      flex-wrap: nowrap;
+    }
+
+    .rating-stars i {
+      color: #ddd;
+      cursor: pointer;
+      transition: color 0.2s;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      padding: clamp(2px, 1vw, 4px);
+    }
+
+    .rating-stars i.active {
+      color: #ffc107;
+    }
+
+    .rating-section {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .rating-stars {
+      display: flex;
+      justify-content: center; /* 🔹 يجعل النجوم في المنتصف أفقياً */
+      align-items: center;
+      margin: 8px 0;
+      gap: 3px; /* مسافة بسيطة بين النجوم */
+    }
+
+
+    .rating-text {
+      text-align: center;
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    /* تأثيرات دخول */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .delay-5 {
+      animation-delay: 0.5s;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="language-switcher">
+      <button class="lang-btn" id="langToggle">
+        <i class="fas fa-globe"></i>
+        <span id="langText">English</span>
+      </button>
+    </div>
+
+    <div class="header fade-in">
+      <img src="app_icon.png" alt="غسلني - تطبيق غسيل السيارات">
+      <div class="header-content">
+        <h2 id="appTitle">غسلني – Ghaslani</h2>
+        <p id="appDesc">غسيل سيارتك في أي وقت وأي مكان 🚗💦</p>
+      </div>
+    </div>
+    
+    <div class="progress" id="progress">
+      <div class="circle"></div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div id="progressText">جاري التحميل... 0%</div>
+    </div>
+
+    <button id="downloadBtn" class="download-btn fade-in delay-4">
+      <i class="fas fa-download"></i> <span id="downloadText">تحميل التطبيق الآن </span>
+    </button>
+
+    <div class="stats fade-in delay-1">
+  <div><i class="fas fa-star star-icon"></i> <span id="rating">4.0</span></div>
+  <div><i class="fas fa-download"></i> <span id="downloads">+1000 عملية تنزيل</span></div>
+  <div><i class="fas fa-user"></i> <span id="users">+500 مستخدم نشط</span></div>
+    </div>
+
+    <div class="screenshots-container fade-in delay-2">
+      <div class="screenshots" id="screenshots">
+        <img src="1.png" alt="لقطة شاشة تطبيق غسلني">
+        <img src="2.png" alt="لقطة شاشة تطبيق غسلني">
+        <img src="3.png" alt="لقطة شاشة تطبيق غسلني">
+        <img src="4.png" alt="لقطة شاشة تطبيق غسلني">
+        <img src="5.png" alt="لقطة شاشة تطبيق غسلني">
+        <img src="6.png" alt="لقطة شاشة تطبيق غسلني">
+      </div>
+      <div class="screenshot-dots" id="dotsContainer">
+        <!-- سيتم إنشاء النقاط ديناميكياً -->
+      </div>
+    </div>
+
+    <div class="features fade-in delay-3">
+      <h3 id="featuresTitle">المميزات الرئيسية:</h3>
+      <div class="features-grid">
+        <div class="feature"><i class="fas fa-check-circle"></i> <span id="feature1">حجز سريع وسهل</span></div>
+        <div class="feature"><i class="fas fa-check-circle"></i> <span id="feature2">أسعار تنافسية</span></div>
+        <div class="feature"><i class="fas fa-check-circle"></i> <span id="feature3">خدمة في موقعك</span></div>
+        <div class="feature"><i class="fas fa-check-circle"></i> <span id="feature4">دفع إلكتروني آمن</span></div>
+      </div>
+    </div>
+
+    
+
+    
+
+    <div class="rating-section fade-in delay-5">
+      <div class="rating-text" id="rateText">قيم التطبيق</div>
+      <div class="rating-stars">
+        <i class="fas fa-star" data-rating="1"></i>
+        <i class="fas fa-star" data-rating="2"></i>
+        <i class="fas fa-star" data-rating="3"></i>
+        <i class="fas fa-star" data-rating="4"></i>
+        <i class="fas fa-star" data-rating="5"></i>
+      </div>
+      <div class="rating-text" id="ratingMessage">انقر على النجوم للتقييم</div>
+    </div>
+
+    <div class="share" id="share">
+      <h3 id="shareTitle">شارك التطبيق مع أصدقائك 🤝</h3>
+      <div class="share-buttons">
+        <button class="share-btn copy" id="copy">
+          <i class="fas fa-copy"></i> <span id="copyText">نسخ الرابط</span>
+        </button>
+        <button class="share-btn whatsapp" id="whatsapp">
+          <i class="fab fa-whatsapp"></i> <span id="whatsappText">واتساب</span>
+        </button>
+        <button class="share-btn twitter" id="twitter">
+          <i class="fab fa-twitter"></i> <span id="twitterText">تويتر</span>
+        </button>
+        <button class="share-btn telegram" id="telegram">
+          <i class="fab fa-telegram"></i> <span id="telegramText">تليجرام</span>
+        </button>
+      </div>
+      <p id="done">تم النسخ بنجاح ✅</p>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <span id="footerText">© 2025 TalbTech LLC – جميع الحقوق محفوظة</span>
+        <img src="logo.png" alt="TalbTech Logo">
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // انتظار تحميل Firebase
+    function waitForFirebase() {
+      return new Promise((resolve) => {
+        const checkFirebase = () => {
+          if (window.db && window.dbRef) {
+            resolve();
+          } else {
+            setTimeout(checkFirebase, 100);
+          }
+        };
+        checkFirebase();
+      });
+    }
+
+    // تهيئة Firebase references
+    let statsRef, ratingsRef;
+    
+    waitForFirebase().then(() => {
+      statsRef = window.dbRef(window.db, "ghaslani/stats");
+      ratingsRef = window.dbRef(window.db, "ghaslani/ratings");
+      initializeApp();
+    }).catch((error) => {
+      console.warn('Firebase failed to load, using fallback:', error);
+      // استخدام fallback بدون Firebase
+      initializeUIWithoutFirebase();
+    });
+
+    // دالة احتياطية بدون Firebase
+    function initializeUIWithoutFirebase() {
+      // تطبيق الترجمات
+      applyTranslations(currentLang);
+      
+      // تهيئة زر التحميل
+      btn.onclick = async () => {
+        btn.style.display = "none";
+        prog.style.display = "block";
+        const circle = document.querySelector('.circle');
+
+        try {
+          const response = await fetch(downloadLink);
+          if (!response.ok) throw new Error("Download failed!");
+
+          const reader = response.body.getReader();
+          const contentLength = +response.headers.get("Content-Length") || 164000000; // 🔹 الحجم التقريبي 157 ميغا بايت
+
+          let receivedLength = 0;
+          const chunks = [];
+
+          // 🟢 متابعة التحميل الحقيقي
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            chunks.push(value);
+            receivedLength += value.length;
+
+            const percent = Math.min((receivedLength / contentLength) * 100, 100);
+            progressFill.style.width = `${percent}%`;
+            text.innerText = `${translations[currentLang].progressText} ${Math.round(percent)}%`;
+          }
+
+          // 🟢 عند اكتمال التحميل 100%
+          circle.style.animation = 'none';
+          circle.style.borderColor = '#00c853';
+          circle.innerHTML = '✅';
+          circle.style.fontSize = '1.8rem';
+          circle.style.color = '#00c853';
+          circle.style.display = 'flex';
+          circle.style.justifyContent = 'center';
+          circle.style.alignItems = 'center';
+          circle.style.border = 'none';
+          progressFill.style.width = '100%';
+          text.innerText = currentLang === 'en'
+            ? "✅ Download Complete! Installing..."
+            : "✅ تم التحميل بنجاح، جاري التثبيت...";
+
+          // 🕒 إنشاء الملف محليًا (اختياري: يفتح التنزيل للمستخدم)
+          const blob = new Blob(chunks);
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'Ghaslani-App.apk';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+
+          // 🕒 إظهار رسالة النجاح والمشاركة
+          setTimeout(() => {
+            text.innerText = currentLang === 'en'
+              ? "✅ Download Complete! You can now install the app from your downloads."
+              : "✅ اكتمل التحميل! يمكنك الآن تثبيت التطبيق من التنزيلات.";
+
+            setTimeout(() => {
+              prog.style.display = 'none';
+              share.style.display = 'block';
+            }, 2500);
+          }, 1500);
+
+        } catch (error) {
+          console.error(error);
+          text.innerText = currentLang === 'en'
+            ? "❌ Download failed. Please try again."
+            : "❌ فشل التحميل، يرجى المحاولة مرة أخرى.";
+          circle.style.animation = 'none';
+          circle.style.borderTopColor = 'red';
+        }
+      };
+
+
+      // مشاركة التطبيق
+      document.getElementById("copy").onclick = () => {
+        navigator.clipboard.writeText(window.location.href);
+        document.getElementById("done").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("done").style.display = "none";
+        }, 3000);
+      };
+
+      document.getElementById("whatsapp").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦 " :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦 ";
+        window.open(`https://wa.me/?text=${encodeURIComponent(message + window.location.href)}`);
+      };
+
+      document.getElementById("twitter").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦 " :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦 ";
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message + window.location.href)}`);
+      };
+
+      document.getElementById("telegram").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦" :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦";
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(message)}`);
+      };
+
+      // نظام التقييم بدون Firebase
+      ratingStars.forEach(star => {
+        star.addEventListener('click', () => {
+          const rating = parseInt(star.getAttribute('data-rating'));
+          ratingStars.forEach((s, index) => {
+            if (index < rating) {
+              s.classList.add('active');
+            } else {
+              s.classList.remove('active');
+            }
+          });
+          
+          ratingMessage.textContent = currentLang === 'en' ?
+            `Thanks for your ${rating} star rating!` :
+            `شكراً لتقييمك بـ ${rating} نجوم!`;
+          ratingMessage.style.color = '#0078ff';
+        });
+      });
+    }
+
+    // رابط التحميل
+    const downloadLink = "https://firebasestorage.googleapis.com/v0/b/carwash2-3d299.firebasestorage.app/o/ghaslnai_app%2Fapp-release.apk?alt=media&token=02a48f42-ef4f-4ebf-9b95-d85937bb0845";
+
+    // عناصر DOM
+    const btn = document.getElementById("downloadBtn");
+    const prog = document.getElementById("progress");
+    const progressFill = document.getElementById("progressFill");
+    const text = document.getElementById("progressText");
+    const share = document.getElementById("share");
+    const ratingStars = document.querySelectorAll('.rating-stars i');
+    const ratingMessage = document.getElementById('ratingMessage');
+
+    // نظام اللغات
+    const translations = {
+      ar: {
+        appTitle: "غسلني – Ghaslani",
+        appDesc: "غسيل سيارتك في أي وقت وأي مكان 🚗💦",
+        featuresTitle: "المميزات الرئيسية:",
+        feature1: "حجز سريع وسهل",
+        feature2: "أسعار تنافسية",
+        feature3: "خدمة في موقعك",
+        feature4: "دفع إلكتروني آمن",
+        downloadText: "تحميل التطبيق الآن ",
+        rateText: "قيم التطبيق",
+        ratingMessage: "انقر على النجوم للتقييم",
+        shareTitle: "شارك التطبيق مع أصدقائك 🤝",
+        copyText: "نسخ الرابط",
+        whatsappText: "واتساب",
+        twitterText: "تويتر",
+        telegramText: "تليجرام",
+        footerText: "© 2025 TalbTech LLC – جميع الحقوق محفوظة",
+        langText: "English",
+        progressText: "جاري التحميل...",
+        downloads: "عملية تنزيل",
+        users: "مستخدم نشط"
+      },
+      en: {
+        appTitle: "Ghaslani – Car Wash",
+        appDesc: "Your car wash anytime, anywhere 🚗💦",
+        featuresTitle: "Main Features:",
+        feature1: "Quick & Easy Booking",
+        feature2: "Competitive Prices",
+        feature3: "Service at Your Location",
+        feature4: "Secure Electronic Payment",
+        downloadText: "Download App Now",
+        rateText: "Rate the App",
+        ratingMessage: "Click on stars to rate",
+        shareTitle: "Share App with Friends 🤝",
+        copyText: "Copy Link",
+        whatsappText: "WhatsApp",
+        twitterText: "Twitter",
+        telegramText: "Telegram",
+        footerText: "© 2025 TalbTech LLC – All Rights Reserved",
+        langText: "العربية",
+        progressText: "Downloading...",
+        downloads: "Downloads",
+        users: "Active Users"
+      }
+    };
+
+    // الكشف عن لغة الجهاز التلقائية
+    let currentLang = 'ar';
+    if (navigator.language.startsWith('en')) {
+      currentLang = 'en';
+      document.body.classList.add('english');
+    }
+
+    // تطبيق الترجمة
+    function applyTranslations(lang) {
+      const elements = document.querySelectorAll('[id]');
+      elements.forEach(element => {
+        const key = element.id;
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // تحديث الإحصائيات مع الترجمة
+      document.getElementById('downloads').textContent = `+1000 ${translations[lang].downloads}`;
+      document.getElementById('users').textContent = `+500 ${translations[lang].users}`;
+    }
+
+    // تبديل اللغة
+    document.getElementById('langToggle').addEventListener('click', function () {
+      if (currentLang === 'ar') {
+        currentLang = 'en';
+        document.body.classList.add('english');
+        document.body.setAttribute('dir', 'ltr');
+      } else {
+        currentLang = 'ar';
+        document.body.classList.remove('english');
+        document.body.setAttribute('dir', 'rtl');
+      }
+      applyTranslations(currentLang);
+    });
+
+    // تطبيق الترجمة الأولية
+    applyTranslations(currentLang);
+
+    // نظام تمرير الصور
+    let currentSlide = 0;
+    const screenshots = document.getElementById('screenshots');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const slides = document.querySelectorAll('.screenshots img');
+    const totalSlides = slides.length;
+
+    // إنشاء نقاط التنقل
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    // الانتقال لشريحة محددة
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      const slideWidth = slides[0].offsetWidth + 12; // عرض الصورة + المسافة
+      screenshots.scrollTo({
+        left: slideIndex * slideWidth,
+        behavior: 'smooth'
+      });
+      updateDots();
+    }
+
+    // تحديث النقاط النشطة
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+
+
+    // تمرير اللمس
+    let startX = 0;
+    let endX = 0;
+
+    screenshots.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    screenshots.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+
+      if (startX - endX > swipeThreshold) {
+        // مسحة لليسار - التالي
+        if (currentSlide < totalSlides - 1) {
+          goToSlide(currentSlide + 1);
+        }
+      } else if (endX - startX > swipeThreshold) {
+        // مسحة لليمين - السابق
+        if (currentSlide > 0) {
+          goToSlide(currentSlide - 1);
+        }
+      }
+    }
+
+    // دالة تهيئة التطبيق
+    function initializeApp() {
+      // تحديث الإحصائيات من Firebase
+      window.dbOnValue(statsRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          const downloadsText = currentLang === 'en' ?
+            `+${data.downloads || 1000} ${translations[currentLang].downloads}` :
+            `+${data.downloads || 1000} ${translations[currentLang].downloads}`;
+
+          const usersText = currentLang === 'en' ?
+            `+${data.users || 500} ${translations[currentLang].users}` :
+            `+${data.users || 500} ${translations[currentLang].users}`;
+
+          document.getElementById('downloads').textContent = downloadsText;
+          document.getElementById('users').textContent = usersText;
+
+          // حساب متوسط التقييم
+          if (data.ratings && data.ratings.total > 0) {
+            const avgRating = (data.ratings.sum / data.ratings.total).toFixed(1);
+            document.getElementById('rating').textContent = avgRating;
+          }
+        }
+      });
+      
+      // تهيئة باقي الوظائف
+      initializeUI();
+    }
+
+    // دالة تهيئة واجهة المستخدم
+    function initializeUI() {
+      // تطبيق الترجمات
+      applyTranslations(currentLang);
+      
+      // تهيئة زر التحميل
+      btn.onclick = () => {
+        btn.style.display = "none";
+        prog.style.display = "block";
+
+        let i = 0;
+        const timer = setInterval(() => {
+          i += Math.random() * 15;
+          if (i > 100) i = 100;
+
+          progressFill.style.width = `${i}%`;
+          text.innerText = `${translations[currentLang].progressText} ${Math.round(i)}%`;
+
+          if (i >= 100) {
+            clearInterval(timer);
+            text.innerText = currentLang === 'en' ?
+              "✅ Download Complete, Installing..." :
+              "✅ تم التحميل بنجاح، جاري التثبيت...";
+
+            setTimeout(() => {
+              const a = document.createElement('a');
+              a.href = downloadLink;
+              a.download = 'Ghaslani-App.apk';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+
+              // تحديث النص لإعلام المستخدم بإمكانية التثبيت المباشر
+              setTimeout(() => {
+                text.innerText = currentLang === 'en' ?
+                  "✅ Download Complete! You can now install the app from your downloads." :
+                  "✅ اكتمل التحميل! يمكنك الآن تثبيت التطبيق من التنزيلات.";
+              }, 1000);
+
+              setTimeout(() => {
+                share.style.display = "block";
+              }, 3000);
+            }, 1500);
+          }
+        }, 300);
+      };
+
+
+      // نظام التقييم
+      ratingStars.forEach(star => {
+        star.addEventListener('click', () => {
+          const rating = parseInt(star.getAttribute('data-rating'));
+
+          // تحديث واجهة النجوم
+          ratingStars.forEach((s, index) => {
+            if (index < rating) {
+              s.classList.add('active');
+            } else {
+              s.classList.remove('active');
+            }
+          });
+
+          // تحديث التقييم في Firebase
+          window.dbPush(ratingsRef, {
+            rating: rating,
+            timestamp: Date.now()
+          });
+
+          // تحديث الإحصائيات
+          const ratingsStatsRef = window.dbChild(statsRef, "ratings");
+          window.dbRunTransaction(ratingsStatsRef, (current) => {
+            if (!current) {
+              return { total: 1, sum: rating };
+            }
+            return {
+              total: current.total + 1,
+              sum: current.sum + rating
+            };
+          });
+
+          // عرض رسالة الشكر
+          ratingMessage.textContent = currentLang === 'en' ?
+            `Thanks for your ${rating} star rating!` :
+            `شكراً لتقييمك بـ ${rating} نجوم!`;
+          ratingMessage.style.color = '#0078ff';
+        });
+
+        // تأثير hover على النجوم
+        star.addEventListener('mouseover', () => {
+          const rating = parseInt(star.getAttribute('data-rating'));
+          ratingStars.forEach((s, index) => {
+            if (index < rating) {
+              s.style.color = '#ffc107';
+            } else {
+              s.style.color = '#ddd';
+            }
+          });
+        });
+
+        star.addEventListener('mouseout', () => {
+          ratingStars.forEach(s => {
+            if (!s.classList.contains('active')) {
+              s.style.color = '#ddd';
+            }
+          });
+        });
+      });
+
+      // مشاركة التطبيق
+      document.getElementById("copy").onclick = () => {
+        navigator.clipboard.writeText(window.location.href);
+        document.getElementById("done").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("done").style.display = "none";
+        }, 3000);
+      };
+
+      document.getElementById("whatsapp").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦 " :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦 ";
+        window.open(`https://wa.me/?text=${encodeURIComponent(message + window.location.href)}`);
+      };
+
+      document.getElementById("twitter").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦 " :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦 ";
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message + window.location.href)}`);
+      };
+
+      document.getElementById("telegram").onclick = () => {
+        const message = currentLang === 'en' ?
+          "Try Ghaslani car wash app 🚗💦" :
+          "جرب تطبيق غسلني لغسيل السيارات 🚗💦";
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(message)}`);
+      };
+    }
+
+
+  </script>
+</body>
+
+</html>
